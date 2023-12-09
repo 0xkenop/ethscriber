@@ -1,9 +1,16 @@
-import Image from 'next/image';
+import Image from "next/image";
 
 export const Logo = () => {
   return (
-    <div>
-      <Image src="/logoSmall.jpg" alt="Logo" width={150} height={60}/>
+    <div className="logoWrap">
+      <Image
+        src="/images/logo.png"
+        alt="Logo"
+        width={50}
+        height={50}
+        className="logo"
+      />
+      EORC 20
     </div>
   );
 };
