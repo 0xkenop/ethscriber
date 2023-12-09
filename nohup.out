@@ -1,0 +1,28 @@
+
+> next-rainbowkit@0.0.1 start
+> next start
+
+- warn You are using a non-standard "NODE_ENV" value in your environment. This creates inconsistencies in the project and is strongly advised against. Read more: https://nextjs.org/docs/messages/non-standard-node-env
+- error Failed to start server
+Error: listen EADDRINUSE: address already in use :::3000
+    at Server.setupListenHandle [as _listen2] (node:net:1319:16)
+    at listenInCluster (node:net:1367:12)
+    at Server.listen (node:net:1454:7)
+    at /home/gaojie/ethscriber/node_modules/next/dist/server/lib/start-server.js:149:16
+    at new Promise (<anonymous>)
+    at startServer (/home/gaojie/ethscriber/node_modules/next/dist/server/lib/start-server.js:134:11)
+    at nextStart (/home/gaojie/ethscriber/node_modules/next/dist/cli/next-start.js:77:40) {
+  code: 'EADDRINUSE',
+  errno: -98,
+  syscall: 'listen',
+  address: '::',
+  port: 3000
+}
+
+> next-rainbowkit@0.0.1 start
+> next start -p 3001
+
+- warn You are using a non-standard "NODE_ENV" value in your environment. This creates inconsistencies in the project and is strongly advised against. Read more: https://nextjs.org/docs/messages/non-standard-node-env
+- ready started server on 0.0.0.0:3001, url: http://localhost:3001
+- [33mwarn[39m You are using a non-standard "NODE_ENV" value in your environment. This creates inconsistencies in the project and is strongly advised against. Read more: https://nextjs.org/docs/messages/non-standard-node-env
+- [33mwarn[39m You are using a non-standard "NODE_ENV" value in your environment. This creates inconsistencies in the project and is strongly advised against. Read more: https://nextjs.org/docs/messages/non-standard-node-env
