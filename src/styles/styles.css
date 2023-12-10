@@ -274,8 +274,43 @@ body {
 .ethscribe-message.error {
   color: red;
 }
-
+.assetsTitle {
+  color: #000;
+  font-family: Poppins;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 158.7%; /* 47.61px */
+  letter-spacing: -0.9px;
+}
+.assetsList {
+  display: flex;
+  gap: 34px;
+  flex-wrap: wrap;
+  padding: 40px 0 30px;
+}
+.assetsLi {
+  border-radius: 29px;
+  background: #e1ecff;
+  padding: 40px 71px;
+  width: calc(25% - 26px);
+  box-sizing: border-box;
+  margin-bottom: 20px;
+}
 @media screen and (max-width: 768px) {
+  .assetsList {
+    display: block;
+  }
+  .assetsLi {
+    border-radius: 29px;
+    width: 350px;
+    margin: 0 auto 20px;
+    font-size: 14px;
+    padding: 33px 20px;
+  }
+  .assetsTitle {
+    font-size: 18px;
+  }
   .ethscribe-input,
   .ethscribe-encoded-text,
   .ethscribe-hex {

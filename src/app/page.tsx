@@ -1,6 +1,8 @@
 import CenteredContainer from "../components/CenteredContainer";
 import { ConnectButton } from "../components/ConnectButton";
 import ProgressBar from "../components/ProgressBar";
+import MyAssets from "../components/MyAssets";
+
 import { Ethscribe } from "../components/Ethscribe";
 import { GithubButton } from "../components/GithubButton";
 import { Logo } from "../components/Logo";
@@ -29,6 +31,7 @@ function Home() {
         <h2 className="scriberTitle">EOS EORCscriber</h2>
         <div className="scriberTitle1">A tool to inscrib EORC20</div>
         <Ethscribe />
+        <MyAssets />
       </CenteredContainer>
       <Socials />
     </>
