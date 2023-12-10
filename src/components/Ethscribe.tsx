@@ -9,7 +9,10 @@ import {
 import { ChangeEvent, useCallback, useEffect, useState } from "react";
 import { EthscriptionsAPI } from "../utils/ethscriptionsAPI";
 import { identify, track } from "../utils/analytics";
-
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
 export function Ethscribe() {
   const { data, error, isLoading, isError, sendTransaction } =
     useSendTransaction();
@@ -17,7 +20,14 @@ export function Ethscribe() {
   const { isLoading: isPending, isSuccess } = useWaitForTransaction({
     hash: data?.hash,
   });
-
+  const [showError, __showError] = useState(false);
+  const [showSuccess, __showSuccess] = useState(false);
+  useEffect(() => {
+    if (isError) __showError(isError);
+  }, [isError]);
+  useEffect(() => {
+    if (isSuccess) __showSuccess(isSuccess);
+  }, [isSuccess]);
   const chainId = useChainId();
 
   const account = useAccount();
@@ -119,12 +129,39 @@ export function Ethscribe() {
       <button className="ethscribe-button" type="button" onClick={onEthscribe}>
         EORCSCRIBER
       </button>
-
-      {isLoading && <div className="ethscribe-message">Check wallet...</div>}
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={isLoading}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
+      <Snackbar
+        open={showError}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        autoHideDuration={6000}
+        sx={{ width: "350px" }}
+        onClose={() => __showError(false)}
+      >
+        <Alert severity="error" sx={{ width: "100%" }}>
+          Error: {error?.message}
+        </Alert>
+      </Snackbar>
+      <Snackbar
+        open={showSuccess}
+        anchorOrigin={{ vertical: "top", horizontal: "center" }}
+        autoHideDuration={4000}
+        onClose={() => __showSuccess(false)}
+      >
+        <Alert severity="success" sx={{ width: "100%" }}>
+          Success!
+        </Alert>
+      </Snackbar>
+      {/* {isLoading && <div className="ethscribe-message">Check wallet...</div>} */}
       {/* {isPending && (
         <div className="ethscribe-message">Transaction pending...</div>
       )} */}
-      {isSuccess && (
+
+      {/* {isSuccess && (
         <>
           <div className="ethscribe-message">
             Success!{" "}
@@ -134,10 +171,10 @@ export function Ethscribe() {
             </a>
           </div>
         </>
-      )}
-      {isError && (
+      )} */}
+      {/* {isError && (
         <div className="ethscribe-message">Error: {error?.message}</div>
-      )}
+      )} */}
     </div>
   );
 }

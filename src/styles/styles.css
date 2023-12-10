@@ -131,6 +131,13 @@ body {
   text-transform: capitalize;
   color: #000;
 }
+button[data-testid="rk-chain-button"] {
+  display: none !important;
+}
+[data-rk] ._1ckjpok1 {
+  max-width: 98vw;
+}
+
 .navBar {
   display: flex;
   padding: 15px 100px;
@@ -303,6 +310,26 @@ body {
   padding-bottom: 20px;
 }
 @media screen and (max-width: 768px) {
+  .css-czn6gf-MuiSnackbar-root {
+    word-break: break-all;
+    top: 8px;
+    bottom: auto;
+  }
+  [data-rk] ._9pm4ki3 {
+    top: 0;
+    bottom: auto;
+    padding-bottom: 0 !important;
+    height: 100%;
+  }
+  [data-rk] ._1ckjpok7 {
+    padding-bottom: 0 !important;
+    border-radius: 28px !important;
+  }
+  [data-rk] ._9pm4ki5 {
+    position: fixed;
+    top: 50%;
+    margin-top: -200px;
+  }
   .assetsList {
     display: block;
   }
