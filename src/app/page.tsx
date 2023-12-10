@@ -1,3 +1,4 @@
+"use client";
 import CenteredContainer from "../components/CenteredContainer";
 import { ConnectButton } from "../components/ConnectButton";
 import ProgressBar from "../components/ProgressBar";

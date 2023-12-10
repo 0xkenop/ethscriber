@@ -148,7 +148,7 @@ body {
   width: auto;
   margin-right: 7px;
 }
-.navBar button {
+/* .navBar button {
   height: 50px !important;
   width: 220px;
   background: #5186ed !important;
@@ -159,7 +159,7 @@ body {
   font-weight: 500;
   line-height: 38px;
   font-size: 24px !important;
-}
+} */
 .centerWrap {
   max-width: 1344px;
   padding: 0 20px;
@@ -297,6 +297,11 @@ body {
   box-sizing: border-box;
   margin-bottom: 20px;
 }
+.pageWrap {
+  display: flex;
+  justify-content: end;
+  padding-bottom: 20px;
+}
 @media screen and (max-width: 768px) {
   .assetsList {
     display: block;
@@ -330,12 +335,12 @@ body {
     width: 40px;
     height: 40px;
   }
-  .navBar button {
+  /* .navBar button {
     width: 118px;
     height: 32px !important;
     font-size: 14px !important;
     border-radius: 6px !important;
-  }
+  } */
   .wrapBar {
     height: 12px;
   }
