@@ -299,7 +299,7 @@ button[data-testid="rk-chain-button"] {
 .assetsLi {
   border-radius: 29px;
   background: #e1ecff;
-  padding: 40px 71px;
+  padding: 40px 5%;
   width: calc(25% - 26px);
   box-sizing: border-box;
   margin-bottom: 20px;
