@@ -19,7 +19,7 @@ interface Paddings {
 }
 
 export var AsciiMorph = (function () {
-  'use strict';
+  "use strict";
 
   var element: HTMLElement | null = null;
   var canvasDimensions: CanvasDimensions = { x: 0, y: 0 };
@@ -37,8 +37,8 @@ export var AsciiMorph = (function () {
   }
 
   function repeat(pattern: string, count: number): string {
-    if (count < 1) return '';
-    var result = '';
+    if (count < 1) return "";
+    var result = "";
     while (count > 1) {
       if (count & 1) result += pattern;
       count >>= 1;
@@ -75,7 +75,7 @@ export var AsciiMorph = (function () {
 
     for (i = 0; i < data.length; i++) {
       if (data[i].length < renderDimensions.x) {
-        data[i] = data[i] + repeat(' ', renderDimensions.x - data[i].length);
+        data[i] = data[i] + repeat(" ", renderDimensions.x - data[i].length);
       }
     }
 
@@ -85,14 +85,14 @@ export var AsciiMorph = (function () {
     };
 
     for (i = 0; i < data.length; i++) {
-      data[i] = repeat(' ', paddings.x) + data[i] + repeat(' ', paddings.x);
+      data[i] = repeat(" ", paddings.x) + data[i] + repeat(" ", paddings.x);
     }
 
     for (i = 0; i < canvasDimensions.y; i++) {
       if (i < paddings.y) {
-        data.unshift(repeat(' ', canvasDimensions.x));
+        data.unshift(repeat(" ", canvasDimensions.x));
       } else if (i > paddings.y + renderDimensions.y - 1) {
-        data.push(repeat(' ', canvasDimensions.x));
+        data.push(repeat(" ", canvasDimensions.x));
       }
     }
 
@@ -111,7 +111,7 @@ export var AsciiMorph = (function () {
       }
 
       for (var j = 0; j < line.length; j++) {
-        if (line[j] != ' ') {
+        if (line[j] != " ") {
           lastInLine = j;
         }
       }
@@ -150,19 +150,19 @@ export var AsciiMorph = (function () {
     var charA = data[line][start];
     var charB = data[line][end];
 
-    data[line] = replaceAt(data[line], start, ' ');
-    data[line] = replaceAt(data[line], end, ' ');
+    data[line] = replaceAt(data[line], start, " ");
+    data[line] = replaceAt(data[line], end, " ");
 
     if (!(end - 1 == start + 1) && !(start === end) && !(start + 1 === end)) {
       data[line + crushDirection] = replaceAt(
         data[line + crushDirection],
         start + 1,
-        '+*/\\'.substr(Math.floor(Math.random() * '+*/\\'.length), 1)
+        "+*/\\".substr(Math.floor(Math.random() * "+*/\\".length), 1)
       );
       data[line + crushDirection] = replaceAt(
         data[line + crushDirection],
         end - 1,
-        '+*/\\'.substr(Math.floor(Math.random() * '+*/\\'.length), 1)
+        "+*/\\".substr(Math.floor(Math.random() * "+*/\\".length), 1)
       );
     } else if (
       (start === end || start + 1 === end) &&
@@ -173,12 +173,12 @@ export var AsciiMorph = (function () {
       data[line + crushDirection] = replaceAt(
         data[line + crushDirection],
         start,
-        '+*/\\'.substr(Math.floor(Math.random() * '+*/\\'.length), 1)
+        "+*/\\".substr(Math.floor(Math.random() * "+*/\\".length), 1)
       );
       data[line + crushDirection] = replaceAt(
         data[line + crushDirection],
         end,
-        '+*/\\'.substr(Math.floor(Math.random() * '+*/\\'.length), 1)
+        "+*/\\".substr(Math.floor(Math.random() * "+*/\\".length), 1)
       );
     }
 
@@ -191,13 +191,12 @@ export var AsciiMorph = (function () {
   }
 
   function renderSquareData(data: string[]): void {
-    if (!element) throw new Error('element is null');
+    if (!element) throw new Error("element is null");
 
-    element.innerHTML = '';
+    element.innerHTML = "";
     for (var i = 0; i < data.length; i++) {
-      element.innerHTML = element.innerHTML + data[i] + '\n';
+      element.innerHTML = element.innerHTML + data[i] + "\n";
     }
-
     renderedData = data;
   }
 
@@ -262,7 +261,7 @@ export var AsciiMorph = (function () {
     const frame = framesToAnimate[frameIndex];
 
     renderSquareData(frame);
-    
+
     if (frameIndex < framesToAnimate.length - 1) {
       requestAnimationFrame(() => animateFrame(duration, callback));
     } else {
@@ -272,7 +271,7 @@ export var AsciiMorph = (function () {
 
   function main(element: HTMLElement, canvasSize: CanvasDimensions): void {
     if (!element || !canvasSize) {
-      console.log('sorry, I need an element and a canvas size');
+      console.log("sorry, I need an element and a canvas size");
       return;
     }
 

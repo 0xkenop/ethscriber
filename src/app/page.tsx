@@ -28,7 +28,7 @@ function Home() {
         </div>
       </div>
       <CenteredContainer>
-        <ProgressBar percent={88.8} />
+        <ProgressBar />
         <h2 className="scriberTitle">EOS EORCscriber</h2>
         <div className="scriberTitle1">A tool to inscrib EORC20</div>
         <Ethscribe />

@@ -184,6 +184,7 @@ button[data-testid="rk-chain-button"] {
   background: #e6f0ff;
   height: 20px;
   width: 100%;
+  overflow: hidden;
 }
 .percent {
   background: #acc8ff;
@@ -303,13 +304,28 @@ button[data-testid="rk-chain-button"] {
   width: calc(25% - 26px);
   box-sizing: border-box;
   margin-bottom: 20px;
+  word-break: break-all;
 }
 .pageWrap {
   display: flex;
   justify-content: end;
   padding-bottom: 20px;
+  align-items: center;
 }
+.totalSize {
+  font-size: 13px;
+}
+.emptySize {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+/* 手机适配 */
 @media screen and (max-width: 768px) {
+  .emptySize {
+    margin-top: 20px;
+    font-size: 14px;
+  }
   .css-czn6gf-MuiSnackbar-root {
     word-break: break-all;
     top: 8px;
