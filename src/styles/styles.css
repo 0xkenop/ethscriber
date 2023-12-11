@@ -305,6 +305,7 @@ button[data-testid="rk-chain-button"] {
   box-sizing: border-box;
   margin-bottom: 20px;
   word-break: break-all;
+  text-transform: none;
 }
 .pageWrap {
   display: flex;
