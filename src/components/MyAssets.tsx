@@ -16,41 +16,8 @@ function MyAssets({ children }: any) {
   const [total, __total] = useState(0);
   const { address } = useAccount();
 
-  const { isConnected } = useAccount();
-
-  const account = useAccount();
-  useEffect(() => {
-    if (isConnected) {
-      if (account.address !== undefined) {
-        fetch(`https://eorc20.com/api/tickOpHistory/page?pageNumber=1&pageSize=${assetsPerPage}&fromAddress=${account.address}&tick=eoss&opType=mint`).then(res => {
-          console.log(res)
-          res.json().then(res => {
-            console.log(res)
-            const {total, opList} = res?.data
-            console.log(opList)
-            setAssets(opList)
-            setTotalPages(Math.ceil(total / assetsPerPage))
-          })
-        })
-      }
-    }
-  },[])
-  
   // 处理页码变更
   const handlePageChange = (event: any, value: any) => {
-    if (isConnected) {
-      if (account.address !== undefined) {
-        console.log(event, value)
-        fetch(`https://eorc20.com/api/tickOpHistory/page?pageNumber=${value}&pageSize=${assetsPerPage}&fromAddress=${account.address}&tick=eoss&opType=mint`).then(res => {
-          res.json().then(res => {
-            const {total, opList} = res?.data
-            console.log(opList)
-            setAssets(opList)
-            setTotalPages(Math.ceil(total / assetsPerPage))
-          })
-        })
-      }
-    }
     setCurrentPage(value);
   };
   const getAssets = useCallback(async () => {
