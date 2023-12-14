@@ -1,3 +1,4 @@
+"use client";
 import React, { ReactNode } from "react";
 import { Pagination } from "@mui/material";
 import { ChangeEvent, useCallback, useEffect, useState } from "react";
@@ -18,10 +19,13 @@ function MyAssets({ children }: any) {
 
   // 处理页码变更
   const handlePageChange = (event: any, value: any) => {
-    setCurrentPage(value);
+    setCurrentPage(value - 1);
   };
   const getAssets = useCallback(async () => {
     // debugger;
+    if (!address) {
+      return;
+    }
     const url = `https://eorc20.com/api/tickOpHistory/page?pageNumber=${currentPage}&pageSize=${pageSize}&fromAddress=${address}&tick=eoss&opType=2`;
     console.log(url, "url");
     try {
@@ -63,13 +67,13 @@ function MyAssets({ children }: any) {
       )}
       {total > 0 ? (
         <div className="pageWrap">
+          <div className="totalSize">Total {total} EORC-20 Assets</div>
           <Pagination
             count={totalPages}
             page={currentPage + 1}
             onChange={handlePageChange}
             color="primary"
           />
-          <div className="totalSize">Total:{total}</div>
         </div>
       ) : (
         <div className="emptySize">Your inscrib EORC20 quantity: {total}</div>

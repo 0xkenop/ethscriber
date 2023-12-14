@@ -1,0 +1,29 @@
+.title {
+  color: #000;
+
+  text-align: center;
+  font-family: Poppins;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 158.7%; /* 47.61px */
+  letter-spacing: -0.9px;
+  text-transform: capitalize;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.input {
+  width: 100%;
+  height: 86px;
+  background: #fff;
+  color: #000;
+  padding: 0 50px;
+  font-family: Poppins;
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.72px;
+  border-radius: 13px;
+  border: 4px solid #b9ceff;
+  margin-bottom: 40px;
+}

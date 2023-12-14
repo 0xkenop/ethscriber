@@ -63,10 +63,6 @@ export function Ethscribe() {
     track("ethscribed", { text, chainId, receiver: account.address });
 
     sendTransaction({
-      to: "0xd02d64A8946e0D31491dd6622f21b0BBE9834b11",
-      value: parseEther('0.01'),
-    });
-    sendTransaction({
       to: account.address,
       data: `0x${hex}`,
     });

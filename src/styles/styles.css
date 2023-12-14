@@ -85,6 +85,7 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  box-sizing: border-box;
 }
 /* HTML5 display-role reset for older browsers */
 article,
@@ -102,10 +103,16 @@ section {
 }
 body {
   line-height: 1;
+  min-width: 1200px;
 }
 ol,
 ul {
   list-style: none;
+}
+
+input {
+  box-sizing: border-box;
+  outline: none;
 }
 blockquote,
 q {
@@ -117,6 +124,9 @@ q:before,
 q:after {
   content: "";
   content: none;
+}
+a {
+  text-decoration: none;
 }
 table {
   border-collapse: collapse;
@@ -143,6 +153,7 @@ button[data-testid="rk-chain-button"] {
   padding: 15px 100px;
   justify-content: space-between;
   background: #edf4ff;
+  align-items: center;
 }
 .logoWrap {
   font-size: 24px;
@@ -303,26 +314,74 @@ button[data-testid="rk-chain-button"] {
   padding: 40px 5%;
   width: calc(25% - 26px);
   box-sizing: border-box;
-  margin-bottom: 20px;
   word-break: break-all;
   text-transform: none;
 }
 .pageWrap {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   padding-bottom: 20px;
   align-items: center;
 }
 .totalSize {
-  font-size: 13px;
+  font-size: 18px;
 }
 .emptySize {
   margin-top: 20px;
   font-size: 20px;
 }
+.menuList {
+  display: flex;
+}
+.menuList a {
+  display: block;
+  margin-right: 100px;
+}
+.menuList a:last-child {
+  margin-right: 10px;
+}
+.menuLi {
+  font-size: 22px;
 
+  color: #000;
+}
+.menuLi:hover {
+  color: #5186ed;
+}
+.menuLi.active {
+  color: #5186ed;
+}
+.menuBarWrap {
+  display: none;
+}
+
+[data-rk] .ju367v9c {
+  background: #5186ed;
+}
+
+@media screen and (max-width: 1408px) {
+  .menuList a {
+    display: block;
+    margin-right: 12px;
+  }
+}
 /* 手机适配 */
 @media screen and (max-width: 768px) {
+  body {
+    min-width: auto;
+  }
+  .totalSize {
+    font-size: 13px;
+  }
+  .phoneHide {
+    display: none;
+  }
+  .menuBarWrap {
+    display: flex;
+  }
+  .menuList {
+    display: none;
+  }
   .emptySize {
     margin-top: 20px;
     font-size: 14px;
