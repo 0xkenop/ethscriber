@@ -142,6 +142,7 @@ export default function Data() {
                     <a
                       href={`https://explorer.evm.eosnetwork.com/tx/${row.txHash}`}
                       target="_blank"
+                      rel="noreferrer"
                     >
                       <div className={styles.link} title={row.txHash}>
                         {row.txHash}
