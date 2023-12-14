@@ -15,6 +15,8 @@ import {
   Pagination,
   CircularProgress,
 } from "@mui/material";
+import { useAccount } from "wagmi";
+
 const tableTitleList = [
   "S/N",
   "Txn Hash",
@@ -27,6 +29,7 @@ const tableTitleList = [
 export default function Data() {
   const [currentPage, setCurrentPage] = useState(1);
   const pageSize = 50; // 每页显示的用户数量
+  // const { address } = useAccount();
   // 计算总页数
   const [totalPages, __totalPages] = useState(0);
   const [loading, __loading] = useState(false);
@@ -34,6 +37,7 @@ export default function Data() {
   const [list, __list] = useState<any>([]);
   const inputRef = useRef<HTMLInputElement>(null);
   // 处理页码变更
+
   const handlePageChange = (event: any, value: any) => {
     setCurrentPage(value);
     console.log(value, "ssssssssss");
@@ -45,6 +49,10 @@ export default function Data() {
     }
   };
   const getList = (fromAddress: string = "", mCurrentPage = 1) => {
+    if (!fromAddress) {
+      alert("Please enter the address you want to query");
+      return;
+    }
     if (loading) {
       alert("Please wait until loading is complete before searching");
       return;

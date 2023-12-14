@@ -38,10 +38,10 @@ export default function RootLayout({
                 </div>
               </a>
             </div>
-            {/* <MenuList></MenuList> */}
+            <MenuList></MenuList>
             <div style={{ display: "flex", justifyContent: "center" }}>
               <ConnectButton />
-              {/* <MenuPhone></MenuPhone> */}
+              <MenuPhone></MenuPhone>
             </div>
           </div>
           {children}
