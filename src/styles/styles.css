@@ -161,6 +161,7 @@ button[data-testid="rk-chain-button"] {
   letter-spacing: -0.72px;
   display: flex;
   align-items: center;
+  color: #000;
 }
 .logo {
   width: auto;
